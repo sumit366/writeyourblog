@@ -1,0 +1,17 @@
+{% extends 'details/layout.html' %}
+{% block content %}
+
+    {% if object_list  %}
+        {% for blog in object_list %}
+
+            <h5>{{ blog.date | date:'d-m-Y' }} <a href="/blog/{{ blog.id }}"> {{ blog.title }} </a> </h5>
+
+        {% endfor %}
+
+    {% else %}
+
+    <p>No data to show</p>
+
+    {% endif %}
+
+{% endblock %}
